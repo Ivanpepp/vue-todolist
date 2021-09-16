@@ -12,6 +12,20 @@ let app = new Vue({
     el: '#app',
     data: {
         listaSpesa : ['Uova','Creatina','L-carnitina','Omega-3','BCAA','Multivitaminico','Caffeina'],
+        aggiunta: ''
+    },
+    methods: {
+
+        xDesctructor : function(index){
+            this.listaSpesa.splice(index, 1);  
+        },
+
+        xAdder : function(){
+            if(this.aggiunta.trim('').length > 0){
+                this.listaSpesa.push(this.aggiunta.trim(''));
+                this.aggiunta = '';
+            }          
+        }
     }
 });
 
